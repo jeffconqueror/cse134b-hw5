@@ -222,3 +222,57 @@ input,
 textarea {
     transition: all 0.2s ease-in-out;
 }
+
+
+.char-counter {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    text-align: right;
+    transition: color 0.3s;
+}
+
+.char-counter.warning {
+    color: var(--warning-color);
+    font-weight: bold;
+}
+
+.char-counter.error {
+    color: var(--error-color);
+    font-weight: bold;
+}
+
+
+.field-error {
+    animation: shake 0.3s, flash 0.5s;
+    border-color: var(--error-color) !important;
+    background-color: #fff5f5 !important;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+}
+
+@keyframes flash {
+    0%, 100% { background-color: #fff5f5; }
+    50% { background-color: #ffcccc; }
+}
+
+
+.fade-out {
+    animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.error-message:not(:empty),
+.info-message:not(:empty) {
+    display: block;
+}
