@@ -28,7 +28,17 @@
         
         function updateIcon(theme) {
             if (themeIcon) {
-                themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                // Remove both classes first
+                themeIcon.classList.remove('fa-moon', 'fa-sun');
+                
+                // Add the appropriate icon class
+                if (theme === 'light') {
+                    themeIcon.classList.add('fa-moon');
+                    themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+                } else {
+                    themeIcon.classList.add('fa-sun');
+                    themeToggle.setAttribute('aria-label', 'Switch to light mode');
+                }
             }
         }
     });
