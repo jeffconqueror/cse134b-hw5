@@ -34,9 +34,10 @@ class ProjectCard extends HTMLElement {
                 .card-header {
                     display: flex;
                     flex-direction: column;
-                    align-items: center;  /* Center header content */
-                    gap: 1rem;  /* Increased gap */
+                    align-items: center;
+                    gap: 1rem;
                     width: 100%;
+                    margin-top: 1rem;  
                 }
                 
                 h2 {
@@ -71,19 +72,22 @@ class ProjectCard extends HTMLElement {
                 .description {
                     color: var(--text-color, #333);
                     line-height: 1.7; 
-                    margin-left: 1.5rem;
-                    margin-right: 1.5rem;
+                    margin: 1.5rem 1rem; 
                     text-align: left;  
-                    padding: 0 1rem;
+                    padding: 1.5rem;
                     font-size: 1rem;
-                    max-width: 100%;
-                    width: 100%; 
+                    box-sizing: border-box; 
+                    
+                    background: rgba(52, 152, 219, 0.05);
+                    border-left: 4px solid var(--secondary-color, #3498db);
+                    border-radius: 0.5rem;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
                 }
                 
                 .technologies {
                     font-weight: 600;
                     color: var(--secondary-color, #3498db);
-                    margin: 1.5rem 0; 
+                    margin: 1rem 0; 
                     text-align: center;
                     padding: 0 1rem;
                     font-size: 0.95rem;
@@ -94,11 +98,12 @@ class ProjectCard extends HTMLElement {
                     background: linear-gradient(135deg, var(--secondary-color, #3498db), var(--primary-color, #2c3e50));
                     color: white;
                     text-decoration: none;
-                    padding: 0.75rem 2rem;  /* Increased padding */
+                    padding: 0.75rem 2rem;
                     border-radius: 0.5rem;
                     font-weight: 600;
                     transition: all 0.3s ease;
-                    margin-top: 1rem;
+                    margin-top: 0.5rem;  
+                    margin-bottom: 1.5rem;
                     font-size: 1rem;
                     text-align: center;
                 }
