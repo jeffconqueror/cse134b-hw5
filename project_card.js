@@ -12,7 +12,7 @@ class ProjectCard extends HTMLElement {
                     display: block;
                     background: var(--card-bg, #ffffff);
                     border-radius: 0.75rem;
-                    padding: var(--spacing-md, 2rem);
+                    padding: 2rem;
                     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
                     transition: all 0.4s ease;
                     margin-bottom: var(--spacing-lg, 3rem);
@@ -26,13 +26,17 @@ class ProjectCard extends HTMLElement {
                 .card-container {
                     display: flex;
                     flex-direction: column;
-                    gap: 1rem;
+                    align-items: center;
+                    gap: 2rem;  
+                    text-align: center;
                 }
                 
                 .card-header {
                     display: flex;
                     flex-direction: column;
-                    gap: 0.5rem;
+                    align-items: center;  /* Center header content */
+                    gap: 1rem;  /* Increased gap */
+                    width: 100%;
                 }
                 
                 h2 {
@@ -40,16 +44,20 @@ class ProjectCard extends HTMLElement {
                     font-size: 1.75rem;
                     margin: 0;
                     font-weight: 600;
+                    text-align: center;  /* Center title */
+                    line-height: 1.3;
+                    padding: 0 1rem;  /* Add horizontal padding */
                 }
                 
                 .card-image {
                     width: 100%;
-                    max-width: 400px;
+                    max-width: 100%;
                     height: auto;
-                    object-fit: contain;
+                    min-height: 200px;
+                    object-fit: cover;
                     object-position: center;
                     border-radius: 0.5rem;
-                    margin: 1rem auto;
+                    margin: 1.5rem 0;  
                     display: block;
                     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
                     transition: transform 0.3s ease;
@@ -62,14 +70,23 @@ class ProjectCard extends HTMLElement {
                 
                 .description {
                     color: var(--text-color, #333);
-                    line-height: 1.6;
-                    margin: 1rem 0;
+                    line-height: 1.7; 
+                    margin-left: 1.5rem;
+                    margin-right: 1.5rem;
+                    text-align: left;  
+                    padding: 0 1rem;
+                    font-size: 1rem;
+                    max-width: 100%;
+                    width: 100%; 
                 }
                 
                 .technologies {
                     font-weight: 600;
                     color: var(--secondary-color, #3498db);
-                    margin: 0.5rem 0;
+                    margin: 1.5rem 0; 
+                    text-align: center;
+                    padding: 0 1rem;
+                    font-size: 0.95rem;
                 }
                 
                 .learn-more-link {
@@ -77,12 +94,13 @@ class ProjectCard extends HTMLElement {
                     background: linear-gradient(135deg, var(--secondary-color, #3498db), var(--primary-color, #2c3e50));
                     color: white;
                     text-decoration: none;
-                    padding: 0.75rem 1.5rem;
+                    padding: 0.75rem 2rem;  /* Increased padding */
                     border-radius: 0.5rem;
                     font-weight: 600;
                     transition: all 0.3s ease;
                     margin-top: 1rem;
-                    align-self: flex-start;
+                    font-size: 1rem;
+                    text-align: center;
                 }
                 
                 .learn-more-link:hover {
@@ -93,23 +111,32 @@ class ProjectCard extends HTMLElement {
                 .tags {
                     display: flex;
                     flex-wrap: wrap;
-                    gap: 0.5rem;
-                    margin-top: 1rem;
+                    gap: 0.75rem;  /* Increased gap */
+                    justify-content: center;  /* Center tags */
+                    margin: 1rem 0;
+                    padding: 0 1rem;  /* Add horizontal padding */
                 }
                 
                 .tag {
                     background: var(--secondary-color, #3498db);
                     color: white;
-                    padding: 0.25rem 0.75rem;
-                    border-radius: 1rem;
+                    padding: 0.5rem 1rem;  /* Increased padding */
+                    border-radius: 1.5rem;  /* More rounded */
                     font-size: 0.875rem;
                     font-weight: 500;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+                
+                .tag:hover {
+                    transform: translateY(-1px);
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
                 }
                 
                 /* Responsive design */
                 @media (max-width: 768px) {
                     :host {
-                        padding: var(--spacing-sm, 1rem);
+                        padding: var(--spacing-md, 1.5rem);  /* Slightly reduced on mobile */
                     }
                     
                     h2 {
@@ -117,7 +144,11 @@ class ProjectCard extends HTMLElement {
                     }
                     
                     .card-image {
-                        max-width: 300px;
+                        min-height: 180px;
+                    }
+                    
+                    .description, .technologies {
+                        padding: 0 0.5rem;  /* Reduced padding on mobile */
                     }
                 }
                 
@@ -127,7 +158,12 @@ class ProjectCard extends HTMLElement {
                     }
                     
                     .card-image {
-                        max-width: 250px;
+                        min-height: 150px;
+                    }
+                    
+                    .learn-more-link {
+                        padding: 0.65rem 1.5rem;
+                        font-size: 0.95rem;
                     }
                 }
             </style>
