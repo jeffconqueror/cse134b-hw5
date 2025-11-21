@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles/view-transitions.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="project_card.js"></script>
+    <script src="dataloader.js"></script>
 </head>
 <body>
     <button id="theme-toggle" aria-label="Toggle dark mode">
@@ -37,22 +39,14 @@
             
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <article>
-                    <h3>3D models</h3>
-                    <img src="image/Screenshot 2025-10-17 103850.png" 
-                         srcset="image/Screenshot 2025-10-17 103850.png 400w,
-                                 image/Screenshot 2025-10-17 103850.png 800w,
-                                 image/Screenshot 2025-10-17 103850.png 1200w"
-                         sizes="(max-width: 480px) 100vw,
-                                (max-width: 768px) 50vw,
-                                33vw"
-                         alt="3D bicycle model showing detailed mesh structure with colorful components"
-                         width="800"
-                         height="600"
-                         loading="lazy">
-                    <p>Automated <strong>3D model generation</strong> pipeline for creating game-ready assets.</p>
-                    <p><b>Technologies:</b> Blender, Maya, 3ds Max</p>
-                </article>
+                <project-card 
+                    title="3D Concept Learning & Asset Generation"
+                    image="image/Screenshot 2025-10-17 103850.png"
+                    alt="..."
+                    description="Developing a fully automated pipeline..."
+                    technologies="Technologies: Hunyuan3D-2, SAMPart3D..."
+                    tags="Computer Vision,3D Graphics,Deep Learning">
+                </project-card>
     
                 <!-- Project 2 -->
                 <article class="comparison-layout">
