@@ -33,7 +33,7 @@
         </ul>
     </nav>
 
-    <main id="main-content">
+    <!-- <main id="main-content">
         <section>
             <h2>Featured Projects</h2>
             
@@ -76,6 +76,25 @@
                     link="https://arxiv.org/abs/2404.00271"
                     tags="AutoML,Neural Networks,Optimization,Research,Co-author">
                 </project-card>
+            </div>
+        </section>
+    </main> -->
+    <main id="main-content">
+        <section>
+            <h2>Featured Research Projects</h2>
+            
+            <!-- Data loading buttons for HW5 Part 2 -->
+            <div class="data-controls">
+                <button id="load-local" class="data-button">Load Local</button>
+                <button id="load-remote" class="data-button">Load Remote</button>
+            </div>
+            
+            <div class="projects-container" id="projects-container">
+                <!-- Project cards will be dynamically loaded here -->
+                <div class="empty-state" id="empty-state">
+                    <h3>No projects loaded</h3>
+                    <p>Click "Load Local" or "Load Remote" to see projects.</p>
+                </div>
             </div>
         </section>
     </main>
