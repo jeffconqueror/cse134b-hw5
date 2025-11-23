@@ -1,5 +1,6 @@
 name = "cse134b-hw5"
-compatibility_date = "2025-11-23"
+main = "worker.js"
+compatibility_date = "2023-05-18"
 
-[site]
-bucket = "."
+[env.production]
+route = "cse134b-hw5.jingchengli33.workers.dev/*"
