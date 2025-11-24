@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title>Project Management - CRUD Operations</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/crud.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/view-transitions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon theme-icon"></i>
+    </button>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <h1>Project Management</h1>
+        <p>Create, Update, and Delete Projects</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="form-no-js.html">Form (No JS)</a></li>
+            <li><a href="form-with-js.html">Form (With JS)</a></li>
+            <li><a href="crud.html" aria-current="page">Project Management</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <!-- Data Source Selection -->
+        <section class="data-source-section">
+            <h2>Select Data Source</h2>
+            <div class="source-controls">
+                <label>
+                    <input type="radio" name="dataSource" value="local" checked>
+                    <span>LocalStorage</span>
+                </label>
+                <label>
+                    <input type="radio" name="dataSource" value="remote">
+                    <span>Remote API</span>
+                </label>
+            </div>
+        </section>
+
+        <!-- Create Project Section -->
+        <section class="crud-section">
+            <h2><i class="fas fa-plus"></i> Create New Project</h2>
+            <form id="create-form" class="crud-form">
+                <div class="form-group">
+                    <label for="create-title">Project Title *</label>
+                    <input type="text" id="create-title" name="title" required 
+                           placeholder="Enter project title">
+                </div>
+                
+                <div class="form-group">
+                    <label for="create-image">Image Path *</label>
+                    <input type="text" id="create-image" name="image" required 
+                           placeholder="Enter image path">
+                </div>
+                
+                <div class="form-group">
+                    <label for="create-alt">Alt Text *</label>
+                    <input type="text" id="create-alt" name="alt" required 
+                           placeholder="Enter alt text">
+                </div>
+                
+                <div class="form-group">
+                    <label for="create-description">Description *</label>
+                    <textarea id="create-description" name="description" rows="4" required 
+                              placeholder="Enter description"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="create-technologies">Technologies</label>
+                    <input type="text" id="create-technologies" name="technologies" 
+                           placeholder="Enter technologies used">
+                </div>
+                
+                <div class="form-group">
+                    <label for="create-link">Project Link</label>
+                    <input type="url" id="create-link" name="link" 
+                           placeholder="Enter project link">
+                </div>
+                
+                <div class="form-group">
+                    <label for="create-tags">Tags (comma-separated)</label>
+                    <input type="text" id="create-tags" name="tags" 
+                           placeholder="Enter tags (comma-separated)">
+                </div>
+                
+                <button type="submit" class="crud-button create-btn">
+                    <i class="fas fa-plus"></i> Create Project
+                </button>
+            </form>
+        </section>
+
+        <section class="crud-section">
+            <h2><i class="fas fa-edit"></i> Update Existing Project</h2>
+            
+            <div class="form-group">
+                <label for="project-selector">Select Project to Update</label>
+                <select id="project-selector" class="project-select">
+                    <option value="">-- Select a project --</option>
+                </select>
+                <button id="load-projects" class="crud-button secondary">
+                    <i class="fas fa-sync"></i> Refresh Projects
+                </button>
+            </div>
+            
+            <form id="update-form" class="crud-form" style="display: none;">
+                <input type="hidden" id="update-index" name="index">
+                
+                <div class="form-group">
+                    <label for="update-title">Project Title *</label>
+                    <input type="text" id="update-title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="update-image">Image Path *</label>
+                    <input type="text" id="update-image" name="image" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="update-alt">Alt Text *</label>
+                    <input type="text" id="update-alt" name="alt" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="update-description">Description *</label>
+                    <textarea id="update-description" name="description" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="update-technologies">Technologies</label>
+                    <input type="text" id="update-technologies" name="technologies">
+                </div>
+                
+                <div class="form-group">
+                    <label for="update-link">Project Link</label>
+                    <input type="url" id="update-link" name="link">
+                </div>
+                
+                <div class="form-group">
+                    <label for="update-tags">Tags (comma-separated)</label>
+                    <input type="text" id="update-tags" name="tags">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="crud-button update-btn">
+                        <i class="fas fa-save"></i> Update Project
+                    </button>
+                    <button type="button" id="cancel-update" class="crud-button secondary">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="crud-section">
+            <h2><i class="fas fa-trash"></i> Delete Project</h2>
+            
+            <div class="form-group">
+                <label for="delete-selector">Select Project to Delete</label>
+                <select id="delete-selector" class="project-select">
+                    <option value="">-- Select a project --</option>
+                </select>
+                <button id="load-delete-projects" class="crud-button secondary">
+                    <i class="fas fa-sync"></i> Refresh Projects
+                </button>
+            </div>
+            
+            <div id="delete-preview" class="delete-preview" style="display: none;">
+                <h3>Project Preview</h3>
+                <div id="delete-project-info" class="project-info"></div>
+                <div class="form-actions danger-zone">
+                    <button id="confirm-delete" class="crud-button delete-btn">
+                        <i class="fas fa-trash"></i> Confirm Delete
+                    </button>
+                    <button id="cancel-delete" class="crud-button secondary">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div id="status-message" class="status-message"></div>
+        
+        <section class="crud-section">
+            <h2><i class="fas fa-info-circle"></i> Example Test Data</h2>
+            <div class="example-data">
+                <h3>Example Create Data:</h3>
+                <div class="example-form">
+                    <p><strong>Title:</strong> Advanced Deep Learning Framework</p>
+                    <p><strong>Image:</strong> image/deep-learning.jpg</p>
+                    <p><strong>Alt:</strong> Deep learning neural network architecture visualization</p>
+                    <p><strong>Description:</strong> Revolutionary deep learning framework that combines transformer architecture with convolutional networks for enhanced performance on computer vision tasks.</p>
+                    <p><strong>Technologies:</strong> PyTorch, CUDA, Python, Docker</p>
+                    <p><strong>Link:</strong> https://github.com/yourname/deep-learning-framework</p>
+                    <p><strong>Tags:</strong> Deep Learning,Computer Vision,PyTorch,Research</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact: <a href="mailto:jingchengli33@gmail.com">My Email</a></p>
+        <p>&copy; 2025 Jingcheng Li. All rights reserved.</p>
+        <p><a href="project.html">← Back to Projects</a></p>
+    </footer>
+
+    <script src="crud.js"></script>
+    <script src="theme.js"></script>
+    <noscript>
+        <style>
+            #theme-toggle { display: none; }
+        </style>
+        <p style="text-align: center; padding: 10px; color: #666;">
+            JavaScript is disabled. CRUD operations require JavaScript.
+        </p>
+    </noscript>
+</body>
+</html>
