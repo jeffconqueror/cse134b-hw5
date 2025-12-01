@@ -127,26 +127,26 @@ class ProjectCRUD {
             this.remoteProjects = result.record || result;
         } catch (error) {
             console.warn('Failed to load from remote API, using fallback data:', error);
-            this.remoteProjects = [
-                {
-                    title: "Remote Fallback Project 1",
-                    image: "image/remote-fallback1.jpg",
-                    alt: "Remote fallback project visualization",
-                    description: "This is a fallback project for demonstration purposes when remote API is not available. This represents remote data source.",
-                    technologies: "Technologies: JavaScript, REST API, JSON",
-                    link: "#",
-                    tags: "Remote,API,Fallback,Demo"
-                },
-                {
-                    title: "Remote Fallback Project 2",
-                    image: "image/remote-fallback2.jpg",
-                    alt: "Another remote fallback project",
-                    description: "Second fallback project to show multiple remote projects. This is completely separate from local storage data.",
-                    technologies: "Technologies: Node.js, Express, MongoDB",
-                    link: "#",
-                    tags: "Backend,Database,Remote"
-                }
-            ];
+            // this.remoteProjects = [
+            //     {
+            //         title: "Remote Fallback Project 1",
+            //         image: "image/remote-fallback1.jpg",
+            //         alt: "Remote fallback project visualization",
+            //         description: "This is a fallback project for demonstration purposes when remote API is not available. This represents remote data source.",
+            //         technologies: "Technologies: JavaScript, REST API, JSON",
+            //         link: "#",
+            //         tags: "Remote,API,Fallback,Demo"
+            //     },
+            //     {
+            //         title: "Remote Fallback Project 2",
+            //         image: "image/remote-fallback2.jpg",
+            //         alt: "Another remote fallback project",
+            //         description: "Second fallback project to show multiple remote projects. This is completely separate from local storage data.",
+            //         technologies: "Technologies: Node.js, Express, MongoDB",
+            //         link: "#",
+            //         tags: "Backend,Database,Remote"
+            //     }
+            // ];
         }
     }
     
