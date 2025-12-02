@@ -1,2 +1,2 @@
-Delete the Contact and form-no-js page because we have the form-with-js page. We make the form-with-js page have consistent style with all othe pages.
-We merge the index.html and about.html's content into one because previously the index.html only had welcome content which is redundant.
+Delete the Contact and form-no-js page because we have the form-with-js page. I make the form-with-js page have consistent style with all othe pages.
+I merge the index.html and about.html's content into one because previously the index.html only had welcome content which is redundant.
