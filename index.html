@@ -4,51 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="view-transition" content="same-origin">
-    <meta name="description" content="Computer Science student portfolio showcasing projects and skills">
+    <meta name="description" content="Jingcheng Li - Computer Science student at UC San Diego, focused on 3D Vision and Multimodal AI">
     <meta name="author" content="Jingcheng Li">
-    <title>My Portfolio - Home</title>
+    <title>Jingcheng Li - Portfolio</title>
     
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles/view-transitions.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* Only border allowed for structure */
-        main {
-            border: 1px solid #ccc;
-        }
-        /* Custom semantic CSS element */
-        info-box {
-            display: block;
-            padding: 15px;
-            margin: 20px 0;
-            border: 2px solid #0066cc;
-            border-radius: 5px;
-            background-color: #e6f2ff;
-        }
-        
-        info-box::before {
-            content: "ℹ️ ";
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
     <button id="theme-toggle" aria-label="Toggle dark mode">
         <i class="fa-solid fa-moon theme-icon"></i>
     </button>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header>
         <h1>Jingcheng Li</h1>
+        <p>Computer Science · 3D Vision · Multimodal AI</p>
     </header>
-    
-    <hello-world id="greeting"></hello-world>
     
     <nav>
         <ul>
             <li><a href="index.html" aria-current="page">Home</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="project.html">Projects</a></li>
             <li><a href="crud.html">Project Management</a></li>
             <li><a href="form-with-js.html">Contact Form (With JS)</a></li>
@@ -56,21 +35,80 @@
     </nav>
 
     <main id="main-content">
-        <section class="welcome-section">
-            <h2>Welcome to My Portfolio</h2>
-                <p>Hi! I'm a <b>computer science student</b> passionate about building 
-                efficient pipelines and solving complex technical problems with AI.</p>
-            <p>This site showcases my <i>projects</i>, skills, and experience.</p>
+        <!-- Hero/Profile Section -->
+        <section class="hero-section">
+            <div class="profile-column">
+                <img src="image/selfie.webp" 
+                     alt="Jingcheng Li, computer science graduate student at UC San Diego"
+                     class="profile-image"
+                     loading="eager">
+                
+                <ul class="profile-links">
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=3o_c4u4AAAAJ&hl=en" title="Google Scholar">
+                            <img src="https://api.iconify.design/academicons/google-scholar.svg" alt="Google Scholar">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/jingchengli112" title="LinkedIn">
+                            <img src="https://api.iconify.design/mdi/linkedin.svg" alt="LinkedIn">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="image/CV.pdf" title="Download CV">
+                            <img src="https://api.iconify.design/academicons/cv.svg" alt="CV">
+                        </a>
+                    </li>
+                </ul>
+            </div>
             
-            <a href="Project.html" class="button-link">View My Projects</a>
+            <div class="hero-content">
+                <h2>Hello! I'm Jingcheng</h2>
+                <p>I'm a computer science student at <strong>UC San Diego</strong>, focused on 3D Vision and Multimodal AI. 
+                   As an efficient and detail-oriented researcher, I thrive on solving complex technical challenges. 
+                   My work combines cutting-edge machine learning techniques with practical applications in computer vision and graphics.</p>
+                
+                <a href="project.html" class="button-link">View My Projects</a>
+            </div>
         </section>
 
-        <section>
-            <h3>Featured Projects</h3>
-            <article>
-                <h3>3D Object Asset Rigging</h3>
-                <p>We aim to develop a fully automated pipeline that can take a text to 3D monolithic mesh to a rigged and textured 3D object.</p>
-                <a href="project.html">Learn more</a>
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <h3>Technical Skills</h3>
+            <ul class="skills-list">
+                <li>Python</li>
+                <li>PyTorch</li>
+                <li>Computer Vision</li>
+                <li>3D Graphics</li>
+                <li>Blender</li>
+                <li>Unreal Engine</li>
+            </ul>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education-section">
+            <h3>Education</h3>
+            <div class="education-grid">
+                <div class="education-item">
+                    <h4>UC San Diego</h4>
+                    <p>M.S. Computer Science</p>
+                    <span class="date">Expected 2026</span>
+                </div>
+                <div class="education-item">
+                    <h4>UC Irvine</h4>
+                    <p>B.S. Computer Science</p>
+                    <span class="date">2020 - 2024</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Project Section -->
+        <section class="featured-section">
+            <h3>Featured Research</h3>
+            <article class="featured-project">
+                <h4>3D Object Asset Rigging</h4>
+                <p>Developing a fully automated pipeline that transforms text prompts into animated, segmented, and simulation-ready 3D assets for game engines.</p>
+                <a href="project.html">Explore all projects →</a>
             </article>
         </section>
     </main>
@@ -79,21 +117,6 @@
         <p>Contact: <a href="mailto:jingchengli33@gmail.com">My Email</a></p>
         <p>&copy; 2025 Jingcheng Li. All rights reserved.</p>
     </footer>
-
-    <noscript>
-        <p>JavaScript is disabled in your browser. Some features may not work.</p>
-    </noscript>
-
-    <script>
-        // Hello World custom element - logs to console
-        class HelloWorld extends HTMLElement {
-            connectedCallback() {
-                console.log("Hello World!");
-            }
-        }
-        
-        customElements.define('hello-world', HelloWorld);
-    </script>
     <script src="theme.js"></script>
     <noscript>
         <style>
